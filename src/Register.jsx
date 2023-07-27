@@ -3,14 +3,13 @@ import React from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./firabse";
 
-// import axios from "./api/axios";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-// const REGISTER_URL = "/register";
+
 const Register = () => {
   const userRef = useRef();
-  // const errRef = useRef();
+
   const passRef = useRef();
 
   const [disabled, setDisabled] = useState(false);
@@ -33,23 +32,17 @@ const Register = () => {
   const [matchFocus, setMatchFocus] = useState(false);
 
   const [errMsg, setErrMsg] = useState("");
-  const [success, setSuccess] = useState(false);
-
-  // useEffect(() => {
-  //   console.log("fullname:", fullName.length);
-  // }, [fullName]);
+  // const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     const result = USER_REGEX.test(user);
-    // console.log(result);
-    // console.log(user);
+
     setValidName(result);
   }, [user]);
 
   useEffect(() => {
     const result = PWD_REGEX.test(pwd);
-    // console.log(result);
-    // console.log(pwd);
+
     setValidPwd(result);
     setValidMatch(pwd === matchPwd);
   }, [pwd, matchPwd]);
@@ -88,8 +81,6 @@ const Register = () => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, fullName, pwd)
       .then((userCredential) => {
-        console.log(userCredential);
-
         setPop(true);
         setErrorPop(false);
         setInvalidPop(false);
@@ -110,9 +101,6 @@ const Register = () => {
           setErrorPop(false);
         }
         console.log(error.code);
-        // setPop(false);
-        // setErrorPop(false);
-        // setInvalidPop(false);
       });
   };
 

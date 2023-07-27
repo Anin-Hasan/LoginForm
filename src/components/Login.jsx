@@ -34,7 +34,7 @@ const Login = () => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, pass)
       .then((userCredential) => {
-        console.log(userCredential);
+        // console.log(userCredential);
         contex.setState(true);
         navigate("/scs");
       })
@@ -47,9 +47,6 @@ const Login = () => {
           setInvalidEmail(false);
           setWrongPass(true);
         }
-
-        // console.log(error);
-        // contex.setState(false);
       });
   };
 

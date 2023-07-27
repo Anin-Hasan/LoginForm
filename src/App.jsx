@@ -11,7 +11,6 @@ import { useContext } from "react";
 
 function App() {
   const { login } = useContext(userContex);
-  console.log(login);
   return (
     <BrowserRouter>
       <Routes>
