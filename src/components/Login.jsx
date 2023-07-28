@@ -147,16 +147,17 @@ const Login = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-                <input
-                  onChange={(e) => setPass(e.target.value)}
-                  ref={passRef}
-                  className="pl-2 outline-none border-none"
-                  type="password"
-                  name=""
-                  id=""
-                  placeholder="Password"
-                />
-                <span>
+                <div className="flex">
+                  <input
+                    onChange={(e) => setPass(e.target.value)}
+                    ref={passRef}
+                    className="pl-2 outline-none border-none"
+                    type="password"
+                    name=""
+                    id=""
+                    placeholder="Password"
+                  />
+
                   <button onClick={(e) => showPass(e)}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -176,7 +177,7 @@ const Login = () => {
                       />
                     </svg>
                   </button>
-                </span>
+                </div>
               </div>
 
               <button
