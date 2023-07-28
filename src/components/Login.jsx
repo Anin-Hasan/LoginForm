@@ -131,8 +131,8 @@ const Login = () => {
               <div
                 className={
                   wrongPass === !true
-                    ? "flex items-center border-2 py-2 px-3 rounded-2xl mb-4 w-72"
-                    : "flex items-center border-2 py-2 px-3 rounded-2xl mb-4 w-72 border-rose-500 duration-300"
+                    ? "flex items-center border-2 py-2 px-3 rounded-2xl mb-4 w-72 md:w-64"
+                    : "flex items-center border-2 py-2 px-3 rounded-2xl mb-4 w-72 md:w-64 border-rose-500 duration-300"
                 }
               >
                 <svg
@@ -147,7 +147,7 @@ const Login = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-                <div className="flex">
+                <div className="flex justify-center">
                   <input
                     onChange={(e) => setPass(e.target.value)}
                     ref={passRef}

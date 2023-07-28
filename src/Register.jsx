@@ -217,7 +217,7 @@ const Register = () => {
               Must begin with a letter. <br />
               Letters,numbers,underscores,hypens allowed.
             </p>
-            <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4 w-64">
+            <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4 w-72 md:w-64">
               <span></span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -233,18 +233,19 @@ const Register = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              <input
-                ref={passRef}
-                className="pl-2 outline-none border-none"
-                onChange={(e) => setPwd(e.target.value)}
-                onFocus={() => setPwdFocus(true)}
-                onBlur={() => setPwdFocus(false)}
-                type="password"
-                name=""
-                id=""
-                placeholder="Password"
-              />
-              <span>
+              <div className="flex justify-center">
+                <input
+                  ref={passRef}
+                  className="pl-2 outline-none border-none"
+                  onChange={(e) => setPwd(e.target.value)}
+                  onFocus={() => setPwdFocus(true)}
+                  onBlur={() => setPwdFocus(false)}
+                  type="password"
+                  name=""
+                  id=""
+                  placeholder="Password"
+                />
+
                 <button onClick={(e) => showPass(e)}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -264,7 +265,7 @@ const Register = () => {
                     />
                   </svg>
                 </button>
-              </span>
+              </div>
             </div>
             <p
               className={
